@@ -1,3 +1,4 @@
+#import required packages
 import os
 import requests
 import os
@@ -8,9 +9,9 @@ import json
 chars = string.ascii_letters + string.digits + '!@#$%^&*()'
 random.seed = (os.urandom(1024))
 
-url = 'https://applicationhypetest.cf/login/'
+url = 'PLACE LOGIN BOX URL HERE'
 
-names = open('C:/Users/Rayyan/OneDrive/Desktop/temp/nameslist.json')
+names = open('YOURUSERDIR/nameslist.json') #Enter location of where you downloaded the .json file
 data = json.load(names)
 
 for name in data:
@@ -19,11 +20,11 @@ for name in data:
     
     #email_domain = ['@gmail.com','@yahoo.com''@outlook.com','@live.com','@icloud.com','@aol.com']
 
-    username = name + name_extra + '@gmail.com'
+    username = name + name_extra + '@gmail.com' or '@yahoo.com' or '@outlook.com' or '@live.com' or '@icloud.com' or '@aol.com'
     print(username)
     password = ''.join(random.choice(chars) for i in range(8))
     print(password)
     requests.post(url, allow_redirects=False, data={
-    'username': username,
-    'password': password
+    'INSERT USERNAME VARIABLE': username,
+    'INSERT PASSWORD VARIABLE': password
     })
